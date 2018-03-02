@@ -7,7 +7,11 @@ namespace GoneHome
 
     public class Player : MonoBehaviour
     {
-        public float movementSpeed = 10f;
+        public float acceleration = 10f;
+
+        public float maxVelocity = 20f;
+
+        private Vector3 spawnPoint;
 
         private Rigidbody rigid;
 
@@ -15,6 +19,8 @@ namespace GoneHome
         void Start()
         {
             rigid = GetComponent<Rigidbody>();
+
+            spawnPoint = transform.position;
         }
 
         // Update is called once per frame
@@ -25,11 +31,25 @@ namespace GoneHome
 
             Vector3 inputDir = new Vector3(inputH, 0, inputV);
 
-            //rigid.AddForce(inputDir * movementSpeed);
+            Transform cam = Camera.main.transform;
+            inputDir = Quaternion.AngleAxis(cam.eulerAngles.y, Vector3.up) * inputDir;
 
-            Vector3 position = transform.position;
-            position += inputDir * movementSpeed * Time.deltaTime;
-            rigid.MovePosition(position);
+            rigid.AddForce(inputDir * acceleration);
+
+            if (rigid.velocity.magnitude > maxVelocity)
+            {
+                rigid.velocity = rigid.velocity.normalized * maxVelocity;
+            }
+
+           // Vector3 position = transform.position;
+            //position += inputDir * movementSpeed * Time.deltaTime;
+           // rigid.MovePosition(position);
+        }
+
+        public void Reset()
+        {
+            transform.position = spawnPoint;
+            rigid.velocity = Vector3.zero;
         }
     }
 }
