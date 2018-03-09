@@ -11,6 +11,8 @@ namespace GoneHome
 
         public float maxVelocity = 20f;
 
+        public GameObject deathParticles;
+
         private Vector3 spawnPoint;
 
         private Rigidbody rigid;
@@ -48,6 +50,9 @@ namespace GoneHome
 
         public void Reset()
         {
+            GameObject clone = Instantiate(deathParticles);
+            clone.transform.position = transform.position;
+
             transform.position = spawnPoint;
             rigid.velocity = Vector3.zero;
         }
