@@ -23,7 +23,21 @@ namespace Asteroids
         {
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Rotate(Vector3.forward, rotationSpeed);
+                transform.Rotate(Vector3.forward, rotationSpeed*Time.deltaTime);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Rotate(Vector3.back, rotationSpeed *Time.deltaTime);
+            }
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                rigid.AddForce(transform.up * speed);
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                rigid.AddForce(-transform.up * speed);
             }
         }
     }
