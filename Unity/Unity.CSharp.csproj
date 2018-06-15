@@ -148,6 +148,11 @@
     <Compile Include="Assets\~AHundredBalls\Scripts\Bucket.cs" />
     <Compile Include="Assets\~AHundredBalls\Scripts\Paddle.cs" />
     <Compile Include="Assets\~AHundredBalls\Scripts\Spawner.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\CameraController.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\CollectableRotator.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\OnTriggerEnterAction.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\OnTriggerExitAction.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\PlayerController.cs" />
     <Compile Include="Assets\~Asteroids\Scripts\AsteroidSpawner.cs" />
     <Compile Include="Assets\~Asteroids\Scripts\Moving.cs" />
     <Compile Include="Assets\~Asteroids\Scripts\Shooting.cs" />
