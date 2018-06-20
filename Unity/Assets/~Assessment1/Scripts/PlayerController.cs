@@ -19,6 +19,13 @@ namespace Assessment1
 
         private int count;
 
+        public Vector3 startPosition;
+
+        void Awake()
+        {
+            startPosition = transform.position;
+        }
+
         void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -42,13 +49,21 @@ namespace Assessment1
         }
 
         // when the player collides with the pickups, increase the score by 1
-        void OnTriggerEnter(Collider other)
+     public   void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Pick Up"))
             {
                 other.gameObject.SetActive(false);
                 count = count + 1;
                 SetCountText();
+            }
+
+            // is the object an enemy
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                other.gameObject.SetActive(false);
+                transform.position = startPosition;
+
             }
         }
 

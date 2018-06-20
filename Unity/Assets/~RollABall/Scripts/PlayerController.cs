@@ -26,7 +26,7 @@ namespace RollABall
             //Set the count and disply the count on screen
             count = 0;
             SetCountText();
-            winText.text = "";
+           // winText.text = "";
         }
 
         //FixedUpdate calculates physics

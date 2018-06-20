@@ -12,9 +12,8 @@ namespace Assessment1
 
         void Spawn()
         {
+            //Sets the area of spawn
             Vector3 rand = Random.insideUnitSphere * spawnRadius;
-
-            rand.z = 0f;
 
             Vector3 position = transform.position + rand;
 
