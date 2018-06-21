@@ -21,6 +21,7 @@ namespace Assessment1
 
         public Vector3 startPosition;
 
+        // Get the Players start position
         void Awake()
         {
             startPosition = transform.position;
@@ -49,7 +50,7 @@ namespace Assessment1
         }
 
         // when the player collides with the pickups, increase the score by 1
-     public   void OnTriggerEnter(Collider other)
+      void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Pick Up"))
             {
@@ -58,19 +59,24 @@ namespace Assessment1
                 SetCountText();
             }
 
+        }
+
+        void OnCollisionEnter(Collision other)
+        {
             // is the object an enemy
             if (other.gameObject.CompareTag("Enemy"))
             {
                 other.gameObject.SetActive(false);
                 transform.position = startPosition;
-
+                Debug.Log("I have collided");
             }
         }
+
 
         void SetCountText()
         {
             countText.text = "Count: " + count.ToString();
-            if (count >= 12)
+            if (count >= 20)
             {
                 winText.text = "You Win!";
             }

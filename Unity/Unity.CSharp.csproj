@@ -150,8 +150,8 @@
     <Compile Include="Assets\~AHundredBalls\Scripts\Spawner.cs" />
     <Compile Include="Assets\~Assessment1\Scripts\CameraController.cs" />
     <Compile Include="Assets\~Assessment1\Scripts\CollectableRotator.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\Death.cs" />
     <Compile Include="Assets\~Assessment1\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\~Assessment1\Scripts\GameManager.cs" />
     <Compile Include="Assets\~Assessment1\Scripts\OnTriggerEnterAction.cs" />
     <Compile Include="Assets\~Assessment1\Scripts\OnTriggerExitAction.cs" />
     <Compile Include="Assets\~Assessment1\Scripts\PlayerController.cs" />
